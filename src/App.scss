@@ -39,10 +39,17 @@
   margin-block: 5px;
 }
 
-.drumButton {
+.drum-pad {
   width: 75px;
   height: 75px;
   margin: 5px;
+}
+
+.drumButtonClicked{
+  width: 75px;
+  height: 75px;
+  margin: 5px;
+  animation: clickAnimation 0.4s ease;
 }
 
 .controlContainer{
@@ -82,7 +89,9 @@ p{
 }
 
 #display{
+  font-size: 19px;
   width: 170px;
+  height: 60px;
   padding: 15px;
   margin-inline: auto;
   margin-block: 15px;
@@ -90,9 +99,49 @@ p{
   color: #04D9FF;
 }
 
-/*.drumCol{
-  max-width: 332px !important;
-  min-width: 332px !important;
-  max-height: 272px !important;
-  min-height: 272px !important;
-}*/
+@keyframes clickAnimation {
+  0% {
+    background-color: #0056b3;
+  }
+  50% {
+    background-color: #007bff; 
+  }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 15rem;
+}
+
+input[type="range"]::-webkit-slider-runnable-track{
+  background: #04D9FF;
+  height: 0.5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -12px; /* Centers thumb on the track */
+  background-color: #e0faff;
+  height: 2rem;
+  width: 1rem;   
+}
+
+input[type="range"]::-moz-range-track{
+  background: #04D9FF;
+  height: 0.5rem;
+}
+
+input[type="range"]::-moz-range-thumb{
+  border: none; 
+  border-radius: 0; 
+  background-color: #e0faff;
+  height: 2rem;
+  width: 1rem;
+}
+
+
+
